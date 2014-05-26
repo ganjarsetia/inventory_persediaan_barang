@@ -1,0 +1,102 @@
+/***************************/
+/********** LOGIN **********/
+/***************************/
+body {
+	background:url('../images/page_bg.jpg');
+}
+.login-box	{ 
+	width: 600px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	margin: 0px auto;  
+	background: url('../images/bck_black_10.png'); 
+	margin-top: 100px; 
+	padding: 10px; 
+	-moz-border-radius: 5px 5px 5px 5px; 
+	-webkit-border-radius: 5px 5px 5px 5px; 
+	border-radius: 5px 5px 5px 5px; 
+}
+
+.login-border	{ 
+	border: 1px solid #cccccc; 
+	background: url('../images/bck_white_50.png');
+}
+.login-style	{ 
+	border: 3px solid #FFFFFF;
+	background:url('../images/login.jpg') center center no-repeat;
+}
+.login-header	{ 
+	height: 95px; 
+	background: url('../images/login_header.png') center bottom no-repeat; 
+	padding: 15px 15px 0px 15px; 
+}
+.login-header .logo	{ 
+	width: auto; margin: 0px; 
+	padding-top: 0px; 
+}
+.login-header .logo .title	{ 
+	width: 400px; 
+}
+.login-header .logo .text	{ 
+	width: 400px; 
+	color: #333333; 
+}
+.login-inside	{ height: 200px; 
+	padding-top: 35px; 
+	border-bottom: 1px solid #627603; 
+}
+.login-inside p	{ text-align: center; 
+	padding-bottom: 10px; 
+}
+.login-data		{ 
+	width: 310px; 
+	padding: 40px 0px 35px 0px; 
+	background: url('../images/bck_white_50.png'); 
+	margin: 0px auto; 
+	-moz-border-radius: 3px 3px 3px 3px; 
+	-webkit-border-radius: 3px 3px 3px 3px; 
+	border-radius: 3px 3px 3px 3px; 
+	margin-bottom : 20px; 
+}
+.login-data label { display: block; 
+	width: 80px; 
+	float: left; 
+	line-height: 22px; 
+	text-align: right; 
+	margin-right: 
+	10px; 
+}
+.login-data .row	{ 
+	padding-bottom: 10px; 
+}
+.login-data .submit	{ 
+	margin-left: 90px; 
+}
+/*
+.login-footer .remember		{ 
+	color: #FFFFFF; 
+	line-height: 22px; 
+	display: block; 
+	float: left; 
+	font-weight: bold; 
+}
+.login-footer .remember label	{ 
+	margin-left: 3px; 
+}
+.login-footer a	{ 
+	color: #FFFFFF; 
+	text-decoration: none; 
+	background: url('../images/bck_white_20.png'); 
+	font-size: 11px; 
+	font-weight: bold; 
+	display: block; 
+	padding: 0px 15px 0px 15px; 
+	line-height: 22px;
+}
+.login-footer a:hover { 
+	color: #FFFFFF; 
+	text-decoration: none; 
+	background: url('../images/bck_white_30.png');
+}
+
+*/

@@ -1,0 +1,66 @@
+@charset "utf-8";
+/* CSS Document */
+a.icon{
+	background-repeat:no-repeat;
+	background-position:10px 9px;
+	padding-left:32px !important;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	min-height: 10px;
+}
+.sf-menu li:hover{
+	background:		#CFDEFF;
+}
+.tools a.icon, .tools button.icon, .tools input.icon, .tools span.icon {
+	background-repeat:no-repeat;
+	background-position:10px 5px;
+	padding-top: 3px;
+	padding-right: 5px;
+	padding-bottom: 3px;
+}
+
+nav.menu li a.icon {
+	background-repeat:no-repeat;
+	background-position:8px 10px;
+	padding-left:32px !important;
+	padding-top: 13px !important;
+	padding-right: 13px !important;
+	padding-bottom: 13px !important;
+	min-height: 20px;
+}
+
+nav.menu li ul li a.icon {
+	background-repeat:no-repeat;
+	background-position:8px 8px;
+	padding-left:32px !important;
+	padding-top: 10px !important;
+	padding-right: 0px !important;
+	padding-bottom: 1px !important;
+}
+
+nav.menu li ul a.icon {
+	width:148px !important;
+}
+
+
+.icon.home { background-image: url(../images/icons/house.png); background-repeat: no-repeat ;}
+.icon.master { background-image: url(../images/icons/application_home.png); background-repeat: no-repeat; }
+.icon.pengguna { background-image: url(../images/icons/user_add.png); background-repeat: no-repeat; }
+.icon.barang { background-image: url(../images/icons/television.png); background-repeat: no-repeat; }
+.icon.supplier { background-image: url(../images/icons/group.png); background-repeat: no-repeat; }
+
+.icon.transaksi { background-image: url(../images/icons/book_open.png); background-repeat: no-repeat; }
+.icon.pembelian { background-image: url(../images/icons/basket_put.png); background-repeat: no-repeat; }
+.icon.penjualan { background-image: url(../images/icons/basket_remove.png); background-repeat: no-repeat; }
+.icon.returbeli { background-image: url(../images/icons/book_edit.png); background-repeat: no-repeat; }
+
+.icon.laporan { background-image: url(../images/icons/printer.png); background-repeat: no-repeat; }
+.icon.lapbarang { background-image: url(../images/icons/printer_add.png); background-repeat: no-repeat; }
+.icon.lapbeli { background-image: url(../images/icons/printer_add.png); background-repeat: no-repeat; }
+.icon.lapjual { background-image: url(../images/icons/printer_add.png); background-repeat: no-repeat; }
+.icon.lapstok { background-image: url(../images/icons/printer_add.png); background-repeat: no-repeat; }
+
+.icon.keluar { background-image: url(../images/icons/door_out.png); background-repeat: no-repeat; }
+
+
