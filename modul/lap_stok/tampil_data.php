@@ -60,20 +60,20 @@ echo "<div id='info'>
 		
 		$no=1+$hal;
 		while($r_data=mysql_fetch_array($query)){
-			$kode		= $r_data[kode_barang];
+			$kode		= $r_data['kode_barang'];
 			$stok_awal 	= cari_stok_awal($kode);
 			$jml_beli	= cari_jml_beli($kode);
 			$jml_jual	= cari_jml_jual($kode);
 			$stok_akhir	= cari_stok_akhir($kode);
 			echo "<tr>
-					<td align='center'>$no</td>
-					<td align='center'>$kode</td>
-					<td>$r_data[nama_barang]</td>
-					<td>$r_data[satuan]</td>
-					<td align='center'>$stok_awal</td>
-					<td align='center'>$jml_beli</td>
-					<td align='center'>$jml_jual</td>
-					<td align='center'>$stok_akhir</td>
+					<td align='center'>".$no."</td>
+					<td align='center'>".$kode."</td>
+					<td>".$r_data['nama_barang']."</td>
+					<td>".$r_data['satuan']."</td>
+					<td align='center'>".$stok_awal."</td>
+					<td align='center'>".$jml_beli."</td>
+					<td align='center'>".$jml_jual."</td>
+					<td align='center'>".$stok_akhir."</td>
 					</tr>";
 			$no++;
 		}

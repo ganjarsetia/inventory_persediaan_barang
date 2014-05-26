@@ -7,9 +7,9 @@ session_start();
   } else {
     include '../../inc/inc.koneksi.php';
 	include '../../inc/fungsi_indotgl.php';
-	$ruang	= $_POST[ruang];
-	$palok	= $_POST[palok];
-	$jur	= $_POST[jurusan];
+	$ruang	= $_POST['ruang'];
+	$palok	= $_POST['palok'];
+	$jur	= $_POST['jurusan'];
 
 	
     $query = mysql_query("SELECT 

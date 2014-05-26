@@ -37,7 +37,7 @@ $(document).ready(function() {
 </script>
 <?php
 include '../../inc/inc.koneksi.php';
-$kode	= $_GET[kode];
+$kode	= $_GET['kode'];
 echo "<table id='theList' class='detail' width='100%'>
 		<tr>
 			<th>No.</th>
@@ -61,15 +61,15 @@ echo "<table id='theList' class='detail' width='100%'>
 		$jml_data = mysql_num_rows($query);
 		$no=1;
 		while($r_data=mysql_fetch_array($query)){
-			$kode 	= $r_data[kode_jual].'-'.$r_data[kode_barang];
-			$total	= $r_data[jumlah_jual]*$r_data[harga_jual];
+			$kode 	= $r_data['kode_jual'].'-'.$r_data['kode_barang'];
+			$total	= $r_data['jumlah_jual']*$r_data['harga_jual'];
 			echo "<tr>
 					<td align='center'>$no</td>
-					<td>$r_data[kode_barang]</td>
-					<td>$r_data[nama_barang]</td>
-					<td>$r_data[satuan]</td>
-					<td align='center'>$r_data[jumlah_jual]</td>
-					<td align='right'>Rp.".number_format($r_data[harga_jual])."</td>
+					<td>".$r_data['kode_barang']."</td>
+					<td>".$r_data['nama_barang']."</td>
+					<td>".$r_data['satuan']."</td>
+					<td align='center'>".$r_data['jumlah_jual']."</td>
+					<td align='right'>Rp.".number_format($r_data['harga_jual'])."</td>
 					<td align='right'>Rp.".number_format($total)."</td>
 					<td align='center'>
 					<a href='javascript:void(0)' onClick=\"hapus_data('$kode')\">

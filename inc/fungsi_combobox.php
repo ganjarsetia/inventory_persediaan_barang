@@ -69,9 +69,9 @@ function combonamabln($awal, $akhir, $var, $terpilih){
     <option value=''>-Pilih-</option>";
   for ($bln=$awal; $bln<=$akhir; $bln++){
       if ($bln==$terpilih)
-         echo "<option value=$nama_bln[$bln] selected>$nama_bln[$bln]</option>";
+         echo "<option value=".$nama_bln[$bln]." selected>".$nama_bln[$bln]."</option>";
       else
-        echo "<option value=$nama_bln[$bln]>$nama_bln[$bln]</option>";
+        echo "<option value=".$nama_bln[$bln].">".$nama_bln[$bln]."</option>";
   }
   echo "</select> ";
 }

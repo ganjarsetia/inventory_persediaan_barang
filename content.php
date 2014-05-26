@@ -14,20 +14,8 @@ $mod = $_GET['module'];
 if ($mod=='home'){
 	echo "<h2>Selamat Datang</h2>";
 	echo "Selamat datang <b>$_SESSION[namalengkap] </b>, di Aplikasi Persediaan Barang.";
-	echo "<p>Aplikasi ini kami buat untuk peraktek pada Lembaga Kursus dan Pelatihan <span class='cls_hdt'>HDT</span>, agar peserta<br>
-		pelatihan paham dengan konsep pembuatan sistem berbasis WEB. Dengan menggunakan bahasa pemrograman PHP dibantu<br>
-		dengan JQuery, hasil dari pembuatan sistem lebih mempermudah peserta dalam pembuatan aplikasi.</p>";
-	echo "<p>Materi yang kami sampaikan : </p>
-		<ul>
-			<li>Pengantar HTML</li>
-			<li>Pengantar Css</li>
-			<li>Pengantar PHP</li>
-			<li>Pengantar JQuery</li>
-			<li>Pengantar Database</li>
-			<li>Pembuatan Aplikasi</li>
-			<li>Pembuatan Laporan (HTML,PDF,Excel,Word)</li>
-		</ul>";
-			
+	echo "<p>Aplikasi ini adalah <span class='cls_hdt'>Demo</span><br>";
+echo "<p>By: Ganjar Setia M</p>";			
 	echo"<p>&nbsp;</p>
           <p align=right>Login : $hari_ini, ";
   echo tgl_indo(date("Y m d")); 

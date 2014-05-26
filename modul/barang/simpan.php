@@ -4,12 +4,12 @@ include "../../inc/inc.koneksi.php";
 
 $table		="barang";
 
-$kode_barang	=$_POST[kode_barang];
-$nama_barang	=str_replace("'","\'",$_POST[nama_barang]);
-$satuan			=$_POST[satuan];
-$harga_beli		=$_POST[harga_beli];
-$harga_jual		=$_POST[harga_jual];
-$stok_awal		=$_POST[stok_awal];
+$kode_barang	=$_POST['kode_barang'];
+$nama_barang	=str_replace("'","\'",$_POST['nama_barang']);
+$satuan			=$_POST['satuan'];
+$harga_beli		=$_POST['harga_beli'];
+$harga_jual		=$_POST['harga_jual'];
+$stok_awal		=$_POST['stok_awal'];
 
 
 $sql = mysql_query("SELECT kode_barang,nama_barang,satuan,

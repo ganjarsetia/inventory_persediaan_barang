@@ -70,7 +70,7 @@ echo "<div id='filter' align='center'>
 				$query	= "SELECT * FROM barang ORDER BY kode_barang";
 				$sql	= mysql_query($query);
 				while($r_data=mysql_fetch_array($sql)){
-					echo "<option value='$r_data[kode_barang]'>$r_data[kode_barang] - $r_data[nama_barang]</option>";
+					echo "<option value='".$r_data['kode_barang']."'>".$r_data['kode_barang']." - ".$r_data['nama_barang']."</option>";
 				}
 				echo "</select>
 				</td>
@@ -82,7 +82,7 @@ echo "<div id='filter' align='center'>
 				$query	= "SELECT * FROM barang ORDER BY kode_barang";
 				$sql	= mysql_query($query);
 				while($r_data=mysql_fetch_array($sql)){
-					echo "<option value='$r_data[kode_barang]'>$r_data[kode_barang] - $r_data[nama_barang]</option>";
+					echo "<option value='".$r_data['kode_barang']."'>".$r_data['kode_barang']." - ".$r_data['nama_barang']."</option>";
 				}
 				echo "</select>
 				</td>	

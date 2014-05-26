@@ -4,12 +4,12 @@ include "../../inc/fungsi_tanggal.php";
 
 $table		="pembelian";
 
-$kode		=$_POST[kode];
-$tgl		=jin_date_sql($_POST[tgl]);
-$supplier	=$_POST[supplier];
-$kode_barang=$_POST[kode_barang];
-$jumlah		=$_POST[jumlah];
-$harga		=$_POST[harga];
+$kode		=$_POST['kode'];
+$tgl		=jin_date_sql($_POST['tgl']);
+$supplier	=$_POST['supplier'];
+$kode_barang=$_POST['kode_barang'];
+$jumlah		=$_POST['jumlah'];
+$harga		=$_POST['harga'];
 
 $sql = mysql_query("SELECT kode_beli,tgl_beli,kode_supplier,kode_barang,jumlah_beli,harga_beli
 				   FROM $table 

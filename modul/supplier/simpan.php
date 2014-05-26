@@ -3,9 +3,9 @@ include "../../inc/inc.koneksi.php";
 
 $table		="supplier";
 
-$kode		=$_POST[kode];
-$nama		=str_replace("'","\'",$_POST[nama]);
-$alamat		=$_POST[alamat];
+$kode		=$_POST['kode'];
+$nama		=str_replace("'","\'",$_POST['nama']);
+$alamat		=$_POST['alamat'];
 
 $sql = mysql_query("SELECT kode_supplier,nama_supplier,alamat
 				   FROM $table 

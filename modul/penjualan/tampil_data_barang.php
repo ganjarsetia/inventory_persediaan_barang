@@ -59,12 +59,12 @@ echo "<table id='theList' class='barang' width='100%'>
 		while($r_data=mysql_fetch_array($query)){
 			echo "<tr>
 					<td align='center'>$no</td>
-					<td>$r_data[kode_barang]</td>
-					<td>$r_data[nama_barang]</td>
-					<td>$r_data[satuan]</td>
-					<td align='right'>Rp.".number_format($r_data[harga_jual])."</td>
+					<td>".$r_data['kode_barang']."</td>
+					<td>".$r_data['nama_barang']."</td>
+					<td>".$r_data['satuan']."</td>
+					<td align='right'>Rp.".number_format($r_data['harga_jual'])."</td>
 					<td align='center'>
-					<a href='javascript:void(0)' onClick=\"tambah_barang('$r_data[kode_barang]')\">
+					<a href='javascript:void(0)' onClick=\"tambah_barang('".$r_data['kode_barang']."')\">
 					<img src='icon/download.gif' border='0' id='tambah_data' title='Tambah' width='12' height='12' >
 					</a>					
 					</td>

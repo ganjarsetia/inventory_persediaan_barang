@@ -26,8 +26,8 @@ $link_halaman = "";
 // Link ke halaman pertama (first) dan sebelumnya (prev)
 if($halaman_aktif > 1){
 	$prev = $halaman_aktif-1;
-	$link_halaman .= "<a href=$_SERVER[PHP_SELF]?module=$_GET[module]&halaman=1><< First</a> | 
-                    <a href=$_SERVER[PHP_SELF]?module=$_GET[module]&halaman=$prev>< Prev</a> | ";
+	$link_halaman .= "<a href=".$_SERVER['PHP_SELF'].".?module=".$_GET['module']."&halaman=1><< First</a> | 
+                    <a href=".$_SERVER['PHP_SELF']."?module=".$_GET['module']."&halaman=".$prev.">< Prev</a> | ";
 }
 else{ 
 	$link_halaman .= "<< First | < Prev | ";
@@ -38,24 +38,24 @@ $angka = ($halaman_aktif > 3 ? " ... " : " ");
 for ($i=$halaman_aktif-2; $i<$halaman_aktif; $i++){
   if ($i < 1)
   	continue;
-	  $angka .= "<a href=$_SERVER[PHP_SELF]?module=$_GET[module]&halaman=$i>$i</a> | ";
+	  $angka .= "<a href=".$_SERVER['PHP_SELF']."?module=".$_GET['module']."&halaman=".$i.">".$i."</a> | ";
   }
 	  $angka .= " <b>$halaman_aktif</b> | ";
 	  
     for($i=$halaman_aktif+1; $i<($halaman_aktif+3); $i++){
     if($i > $jmlhalaman)
       break;
-	  $angka .= "<a href=$_SERVER[PHP_SELF]?module=$_GET[module]&halaman=$i>$i</a> | ";
+	  $angka .= "<a href=".$_SERVER['PHP_SELF']."?module=".$_GET['module']."&halaman=".$i.">".$i."</a> | ";
     }
-	  $angka .= ($halaman_aktif+2<$jmlhalaman ? " ... | <a href=$_SERVER[PHP_SELF]?module=$_GET[module]&halaman=$jmlhalaman>$jmlhalaman</a> | " : " ");
+	  $angka .= ($halaman_aktif+2<$jmlhalaman ? " ... | <a href=".$_SERVER['PHP_SELF']."?module=".$_GET['module']."&halaman=".$jmlhalaman.">".$jmlhalaman."</a> | " : " ");
 
-$link_halaman .= "$angka";
+$link_halaman .= $angka;
 
 // Link ke halaman berikutnya (Next) dan terakhir (Last) 
 if($halaman_aktif < $jmlhalaman){
 	$next = $halaman_aktif+1;
-	$link_halaman .= " <a href=$_SERVER[PHP_SELF]?module=$_GET[module]&halaman=$next>Next ></a> | 
-                     <a href=$_SERVER[PHP_SELF]?module=$_GET[module]&halaman=$jmlhalaman>Last >></a> ";
+	$link_halaman .= " <a href=".$_SERVER['PHP_SELF']."?module=".$_GET['module']."&halaman=".$next.">Next ></a> | 
+                     <a href=".$_SERVER['PHP_SELF']."?module=".$_GET['module']."&halaman=".$jmlhalaman.">Last >></a> ";
 }
 else{
 	$link_halaman .= " Next > | Last >>";
@@ -92,8 +92,8 @@ $link_halaman = "";
 // Link ke halaman pertama (first) dan sebelumnya (prev)
 if($halaman_aktif > 1){
 	$prev = $halaman_aktif-1;
-	$link_halaman .= "<a href=$_SERVER[PHP_SELF]?module=$_GET[module]&halaman=1&kata=$_GET[kata]><< First</a> | 
-                    <a href=$_SERVER[PHP_SELF]?module=$_GET[module]&halaman=$prev&kata=$_GET[kata]>< Prev</a> | ";
+	$link_halaman .= "<a href=".$_SERVER['PHP_SELF']."?module=".$_GET['module']."&halaman=1&kata=".$_GET['kata']."><< First</a> | 
+                    <a href=".$_SERVER['PHP_SELF']."?module=".$_GET['module']."&halaman=$prev&kata=".$_GET['kata'].">< Prev</a> | ";
 }
 else{ 
 	$link_halaman .= "<< First | < Prev | ";
@@ -104,24 +104,24 @@ $angka = ($halaman_aktif > 3 ? " ... " : " ");
 for ($i=$halaman_aktif-2; $i<$halaman_aktif; $i++){
   if ($i < 1)
   	continue;
-	  $angka .= "<a href=$_SERVER[PHP_SELF]?module=$_GET[module]&halaman=$i&kata=$_GET[kata]>$i</a> | ";
+	  $angka .= "<a href=".$_SERVER['PHP_SELF']."?module=".$_GET['module']."&halaman=$i&kata=".$_GET['kata'].">".$i."</a> | ";
   }
 	  $angka .= " <b>$halaman_aktif</b> | ";
 	  
     for($i=$halaman_aktif+1; $i<($halaman_aktif+3); $i++){
     if($i > $jmlhalaman)
       break;
-	  $angka .= "<a href=$_SERVER[PHP_SELF]?module=$_GET[module]&halaman=$i&kata=$_GET[kata]>$i</a> | ";
+	  $angka .= "<a href=".$_SERVER['PHP_SELF']."?module=".$_GET['module']."&halaman=$i&kata=".$_GET['kata'].">".$i."</a> | ";
     }
-	  $angka .= ($halaman_aktif+2<$jmlhalaman ? " ... | <a href=$_SERVER[PHP_SELF]?module=$_GET[module]&halaman=$jmlhalaman&kata=$_GET[kata]>$jmlhalaman</a> | " : " ");
+	  $angka .= ($halaman_aktif+2<$jmlhalaman ? " ... | <a href=".$_SERVER['PHP_SELF']."?module=".$_GET['module']."&halaman=$jmlhalaman&kata=".$_GET['kata'].">$jmlhalaman</a> | " : " ");
 
 $link_halaman .= "$angka";
 
 // Link ke halaman berikutnya (Next) dan terakhir (Last) 
 if($halaman_aktif < $jmlhalaman){
 	$next = $halaman_aktif+1;
-	$link_halaman .= " <a href=$_SERVER[PHP_SELF]?module=$_GET[module]&halaman=$next&kata=$_GET[kata]>Next ></a> | 
-                     <a href=$_SERVER[PHP_SELF]?module=$_GET[module]&halaman=$jmlhalaman&kata=$_GET[kata]>Last >></a> ";
+	$link_halaman .= " <a href=".$_SERVER['PHP_SELF']."?module=".$_GET['module']."&halaman=$next&kata=".$_GET['kata'].">Next ></a> | 
+                     <a href=".$_SERVER['PHP_SELF']."?module=".$_GET['module']."&halaman=$jmlhalaman&kata=".$_GET['kata'].">Last >></a> ";
 }
 else{
 	$link_halaman .= " Next > | Last >>";
@@ -169,14 +169,14 @@ $angka = ($halaman_aktif > 3 ? " ... " : " ");
 for ($i=$halaman_aktif-2; $i<$halaman_aktif; $i++){
   if ($i < 1)
   	continue;
-	  $angka .= "<a href=halberita-$i.html>$i</a> | ";
+	  $angka .= "<a href=halberita-$i.html>".$i."</a> | ";
   }
 	  $angka .= " <b>$halaman_aktif</b> | ";
 	  
     for($i=$halaman_aktif+1; $i<($halaman_aktif+3); $i++){
     if($i > $jmlhalaman)
       break;
-	  $angka .= "<a href=halberita-$i.html>$i</a> | ";
+	  $angka .= "<a href=halberita-$i.html>".$i."</a> | ";
     }
 	  $angka .= ($halaman_aktif+2<$jmlhalaman ? " ... | <a href=halberita-$jmlhalaman.html>$jmlhalaman</a> | " : " ");
 
@@ -222,8 +222,8 @@ $link_halaman = "";
 // Link ke halaman pertama (first) dan sebelumnya (prev)
 if($halaman_aktif > 1){
 	$prev = $halaman_aktif-1;
-	$link_halaman .= "<a href=halkategori-$_GET[id]-1.html><< First</a> | 
-                    <a href=halkategori-$_GET[id]-$prev.html>< Prev</a> | ";
+	$link_halaman .= "<a href=halkategori-".$_GET['id']."-1.html><< First</a> | 
+                    <a href=halkategori-".$_GET['id']."-$prev.html>< Prev</a> | ";
 }
 else{ 
 	$link_halaman .= "<< First | < Prev | ";
@@ -234,24 +234,24 @@ $angka = ($halaman_aktif > 3 ? " ... " : " ");
 for ($i=$halaman_aktif-2; $i<$halaman_aktif; $i++){
   if ($i < 1)
   	continue;
-	  $angka .= "<a href=halkategori-$_GET[id]-$i.html>$i</a> | ";
+	  $angka .= "<a href=halkategori-".$_GET['id']."-$i.html>".$i."</a> | ";
   }
 	  $angka .= " <b>$halaman_aktif</b> | ";
 	  
     for($i=$halaman_aktif+1; $i<($halaman_aktif+3); $i++){
     if($i > $jmlhalaman)
       break;
-	  $angka .= "<a href=halkategori-$_GET[id]-$i.html>$i</a> | ";
+	  $angka .= "<a href=halkategori-".$_GET['id']."-$i.html>".$i."</a> | ";
     }
-	  $angka .= ($halaman_aktif+2<$jmlhalaman ? " ... | <a href=halkategori-$_GET[id]-$jmlhalaman.html>$jmlhalaman</a> | " : " ");
+	  $angka .= ($halaman_aktif+2<$jmlhalaman ? " ... | <a href=halkategori-".$_GET['id']."-$jmlhalaman.html>$jmlhalaman</a> | " : " ");
 
 $link_halaman .= "$angka";
 
 // Link ke halaman berikutnya (Next) dan terakhir (Last) 
 if($halaman_aktif < $jmlhalaman){
 	$next = $halaman_aktif+1;
-	$link_halaman .= " <a href=halkategori-$_GET[id]-$next.html>Next ></a> | 
-                     <a href=halkategori-$_GET[id]-$jmlhalaman.html>Last >></a> ";
+	$link_halaman .= " <a href=halkategori-".$_GET['id']."-$next.html>Next ></a> | 
+                     <a href=halkategori-".$_GET['id']."-$jmlhalaman.html>Last >></a> ";
 }
 else{
 	$link_halaman .= " Next > | Last >>";
@@ -300,14 +300,14 @@ $angka = ($halaman_aktif > 3 ? " ... " : " ");
 for ($i=$halaman_aktif-2; $i<$halaman_aktif; $i++){
   if ($i < 1)
   	continue;
-	  $angka .= "<a href=halagenda-$i.html>$i</a> | ";
+	  $angka .= "<a href=halagenda-$i.html>".$i."</a> | ";
   }
 	  $angka .= " <b>$halaman_aktif</b> | ";
 	  
     for($i=$halaman_aktif+1; $i<($halaman_aktif+3); $i++){
     if($i > $jmlhalaman)
       break;
-	  $angka .= "<a href=halagenda-$i.html>$i</a> | ";
+	  $angka .= "<a href=halagenda-$i.html>".$i."</a> | ";
     }
 	  $angka .= ($halaman_aktif+2<$jmlhalaman ? " ... | <a href=halagenda-$jmlhalaman.html>$jmlhalaman</a> | " : " ");
 
@@ -366,14 +366,14 @@ $angka = ($halaman_aktif > 3 ? " ... " : " ");
 for ($i=$halaman_aktif-2; $i<$halaman_aktif; $i++){
   if ($i < 1)
   	continue;
-	  $angka .= "<a href=haldownload-$i.html>$i</a> | ";
+	  $angka .= "<a href=haldownload-$i.html>".$i."</a> | ";
   }
 	  $angka .= " <b>$halaman_aktif</b> | ";
 	  
     for($i=$halaman_aktif+1; $i<($halaman_aktif+3); $i++){
     if($i > $jmlhalaman)
       break;
-	  $angka .= "<a href=haldownload-$i.html>$i</a> | ";
+	  $angka .= "<a href=haldownload-$i.html>".$i."</a> | ";
     }
 	  $angka .= ($halaman_aktif+2<$jmlhalaman ? " ... | <a href=haldownload-$jmlhalaman.html>$jmlhalaman</a> | " : " ");
 
@@ -419,8 +419,8 @@ $link_halaman = "";
 // Link ke halaman pertama (first) dan sebelumnya (prev)
 if($halaman_aktif > 1){
 	$prev = $halaman_aktif-1;
-	$link_halaman .= "<a href=halgaleri-$_GET[id]-1.html><< First</a> | 
-                    <a href=halgaleri-$_GET[id]-$prev.html>< Prev</a> | ";
+	$link_halaman .= "<a href=halgaleri-".$_GET['id']."-1.html><< First</a> | 
+                    <a href=halgaleri-".$_GET['id']."-$prev.html>< Prev</a> | ";
 }
 else{ 
 	$link_halaman .= "<< First | < Prev | ";
@@ -431,24 +431,24 @@ $angka = ($halaman_aktif > 3 ? " ... " : " ");
 for ($i=$halaman_aktif-2; $i<$halaman_aktif; $i++){
   if ($i < 1)
   	continue;
-	  $angka .= "<a href=halgaleri-$_GET[id]-$i.html>$i</a> | ";
+	  $angka .= "<a href=halgaleri-".$_GET['id']."-$i.html>".$i."</a> | ";
   }
 	  $angka .= " <b>$halaman_aktif</b> | ";
 	  
     for($i=$halaman_aktif+1; $i<($halaman_aktif+3); $i++){
     if($i > $jmlhalaman)
       break;
-	  $angka .= "<a href=halgaleri-$_GET[id]-$i.html>$i</a> | ";
+	  $angka .= "<a href=halgaleri-".$_GET['id']."-$i.html>".$i."</a> | ";
     }
-	  $angka .= ($halaman_aktif+2<$jmlhalaman ? " ... | <a href=halgaleri-$_GET[id]-$jmlhalaman.html>$jmlhalaman</a> | " : " ");
+	  $angka .= ($halaman_aktif+2<$jmlhalaman ? " ... | <a href=halgaleri-".$_GET['id']."-$jmlhalaman.html>$jmlhalaman</a> | " : " ");
 
 $link_halaman .= "$angka";
 
 // Link ke halaman berikutnya (Next) dan terakhir (Last) 
 if($halaman_aktif < $jmlhalaman){
 	$next = $halaman_aktif+1;
-	$link_halaman .= " <a href=halgaleri-$_GET[id]-$next.html>Next ></a> | 
-                     <a href=halgaleri-$_GET[id]-$jmlhalaman.html>Last >></a> ";
+	$link_halaman .= " <a href=halgaleri-".$_GET['id']."-$next.html>Next ></a> | 
+                     <a href=halgaleri-".$_GET['id']."-$jmlhalaman.html>Last >></a> ";
 }
 else{
 	$link_halaman .= " Next > | Last >>";
@@ -484,8 +484,8 @@ $link_halaman = "";
 // Link ke halaman pertama (first) dan sebelumnya (prev)
 if($halaman_aktif > 1){
 	$prev = $halaman_aktif-1;
-	$link_halaman .= "<a href=halkomentar-$_GET[id]-1.html><< First</a> | 
-                    <a href=halkomentar-$_GET[id]-$prev.html>< Prev</a> | ";
+	$link_halaman .= "<a href=halkomentar-".$_GET['id']."-1.html><< First</a> | 
+                    <a href=halkomentar-".$_GET['id']."-$prev.html>< Prev</a> | ";
 }
 else{ 
 	$link_halaman .= "<< First | < Prev | ";
@@ -496,24 +496,24 @@ $angka = ($halaman_aktif > 3 ? " ... " : " ");
 for ($i=$halaman_aktif-2; $i<$halaman_aktif; $i++){
   if ($i < 1)
   	continue;
-	  $angka .= "<a href=halkomentar-$_GET[id]-$i.html>$i</a> | ";
+	  $angka .= "<a href=halkomentar-".$_GET['id']."-$i.html>".$i."</a> | ";
   }
 	  $angka .= " <b>$halaman_aktif</b> | ";
 	  
     for($i=$halaman_aktif+1; $i<($halaman_aktif+3); $i++){
     if($i > $jmlhalaman)
       break;
-	  $angka .= "<a href=halkomentar-$_GET[id]-$i.html>$i</a> | ";
+	  $angka .= "<a href=halkomentar-".$_GET['id']."-$i.html>".$i."</a> | ";
     }
-	  $angka .= ($halaman_aktif+2<$jmlhalaman ? " ... | <a href=halkomentar-$_GET[id]-$jmlhalaman.html>$jmlhalaman</a> | " : " ");
+	  $angka .= ($halaman_aktif+2<$jmlhalaman ? " ... | <a href=halkomentar-".$_GET['id']."-$jmlhalaman.html>$jmlhalaman</a> | " : " ");
 
 $link_halaman .= "$angka";
 
 // Link ke halaman berikutnya (Next) dan terakhir (Last) 
 if($halaman_aktif < $jmlhalaman){
 	$next = $halaman_aktif+1;
-	$link_halaman .= " <a href=halkomentar-$_GET[id]-$next.html>Next ></a> | 
-                     <a href=halkomentar-$_GET[id]-$jmlhalaman.html>Last >></a> ";
+	$link_halaman .= " <a href=halkomentar-".$_GET['id']."-$next.html>Next ></a> | 
+                     <a href=halkomentar-".$_GET['id']."-$jmlhalaman.html>Last >></a> ";
 }
 else{
 	$link_halaman .= " Next > | Last >>";
@@ -549,8 +549,8 @@ $link_halaman = "";
 // Link ke halaman pertama (first) dan sebelumnya (prev)
 if($halaman_aktif > 1){
 	$prev = $halaman_aktif-1;
-	$link_halaman .= "<a href=$_SERVER[PHP_SELF]?module=$_GET[module]&halaman=1&kata=$_GET[kata]><< First</a> | 
-                    <a href=$_SERVER[PHP_SELF]?module=$_GET[module]&halaman=$prev&kata=$_GET[kata]>< Prev</a> | ";
+	$link_halaman .= "<a href=".$_SERVER['PHP_SELF']."?module=".$_GET['module']."&halaman=1&kata=".$_GET['kata']."><< First</a> | 
+                    <a href=".$_SERVER['PHP_SELF']."?module=".$_GET['module']."&halaman=$prev&kata=".$_GET['kata'].">< Prev</a> | ";
 }
 else{ 
 	$link_halaman .= "<< First | < Prev | ";
@@ -561,24 +561,24 @@ $angka = ($halaman_aktif > 3 ? " ... " : " ");
 for ($i=$halaman_aktif-2; $i<$halaman_aktif; $i++){
   if ($i < 1)
   	continue;
-	  $angka .= "<a href=$_SERVER[PHP_SELF]?module=$_GET[module]&halaman=$i&kata=$_GET[kata]>$i</a> | ";
+	  $angka .= "<a href=".$_SERVER['PHP_SELF']."?module=".$_GET['module']."&halaman=$i&kata=".$_GET['kata'].">".$i."</a> | ";
   }
 	  $angka .= " <b>$halaman_aktif</b> | ";
 	  
     for($i=$halaman_aktif+1; $i<($halaman_aktif+3); $i++){
     if($i > $jmlhalaman)
       break;
-	  $angka .= "<a href=$_SERVER[PHP_SELF]?module=$_GET[module]&halaman=$i&kata=$_GET[kata]>$i</a> | ";
+	  $angka .= "<a href=".$_SERVER['PHP_SELF']."?module=".$_GET['module']."&halaman=$i&kata=".$_GET['kata'].">".$i."</a> | ";
     }
-	  $angka .= ($halaman_aktif+2<$jmlhalaman ? " ... | <a href=$_SERVER[PHP_SELF]?module=$_GET[module]&halaman=$jmlhalaman&kata=$_GET[kata]>$jmlhalaman</a> | " : " ");
+	  $angka .= ($halaman_aktif+2<$jmlhalaman ? " ... | <a href=".$_SERVER['PHP_SELF']."?module=".$_GET['module']."&halaman=$jmlhalaman&kata=".$_GET['kata'].">$jmlhalaman</a> | " : " ");
 
 $link_halaman .= "$angka";
 
 // Link ke halaman berikutnya (Next) dan terakhir (Last) 
 if($halaman_aktif < $jmlhalaman){
 	$next = $halaman_aktif+1;
-	$link_halaman .= " <a href=$_SERVER[PHP_SELF]?module=$_GET[module]&halaman=$next&kata=$_GET[kata]>Next ></a> | 
-                     <a href=$_SERVER[PHP_SELF]?module=$_GET[module]&halaman=$jmlhalaman&kata=$_GET[kata]>Last >></a> ";
+	$link_halaman .= " <a href=".$_SERVER['PHP_SELF']."?module=".$_GET['module']."&halaman=$next&kata=".$_GET['kata'].">Next ></a> | 
+                     <a href=".$_SERVER['PHP_SELF']."?module=".$_GET['module']."&halaman=$jmlhalaman&kata=".$_GET['kata'].">Last >></a> ";
 }
 else{
 	$link_halaman .= " Next > | Last >>";
@@ -614,8 +614,8 @@ $link_halaman = "";
 // Link ke halaman pertama (first) dan sebelumnya (prev)
 if($halaman_aktif > 1){
 	$prev = $halaman_aktif-1;
-	$link_halaman .= "<a href=$_SERVER[PHP_SELF]?module=$_GET[module]&halaman=1&pilih=$_GET[pilih]&kata=$_GET[kata]><< First</a> | 
-                    <a href=$_SERVER[PHP_SELF]?module=$_GET[module]&halaman=$prev&pilih=$_GET[pilih]&kata=$_GET[kata]>< Prev</a> | ";
+	$link_halaman .= "<a href=".$_SERVER['PHP_SELF']."?module=".$_GET['module']."&halaman=1&pilih=".$_GET['pilih']."&kata=".$_GET['kata']."><< First</a> | 
+                    <a href=".$_SERVER['PHP_SELF']."?module=".$_GET['module']."&halaman=$prev&pilih=".$_GET['pilih']."&kata=".$_GET['kata'].">< Prev</a> | ";
 }
 else{ 
 	$link_halaman .= "<< First | < Prev | ";
@@ -626,24 +626,24 @@ $angka = ($halaman_aktif > 3 ? " ... " : " ");
 for ($i=$halaman_aktif-2; $i<$halaman_aktif; $i++){
   if ($i < 1)
   	continue;
-	  $angka .= "<a href=$_SERVER[PHP_SELF]?module=$_GET[module]&halaman=$i&pilih=$_GET[pilih]&kata=$_GET[kata]>$i</a> | ";
+	  $angka .= "<a href=".$_SERVER['PHP_SELF']."?module=".$_GET['module']."&halaman=$i&pilih=".$_GET['pilih']."&kata=".$_GET['kata'].">".$i."</a> | ";
   }
 	  $angka .= " <b>$halaman_aktif</b> | ";
 	  
     for($i=$halaman_aktif+1; $i<($halaman_aktif+3); $i++){
     if($i > $jmlhalaman)
       break;
-	  $angka .= "<a href=$_SERVER[PHP_SELF]?module=$_GET[module]&halaman=$i&pilih=$_GET[pilih]&kata=$_GET[kata]>$i</a> | ";
+	  $angka .= "<a href=".$_SERVER['PHP_SELF']."?module=".$_GET['module']."&halaman=$i&pilih=".$_GET['pilih']."&kata=".$_GET['kata'].">".$i."</a> | ";
     }
-	  $angka .= ($halaman_aktif+2<$jmlhalaman ? " ... | <a href=$_SERVER[PHP_SELF]?module=$_GET[module]&halaman=$jmlhalaman&pilih=$_GET[pilih]&kata=$_GET[kata]>$jmlhalaman</a> | " : " ");
+	  $angka .= ($halaman_aktif+2<$jmlhalaman ? " ... | <a href=".$_SERVER['PHP_SELF']."?module=".$_GET['module']."&halaman=$jmlhalaman&pilih=".$_GET['pilih']."&kata=".$_GET['kata'].">$jmlhalaman</a> | " : " ");
 
 $link_halaman .= "$angka";
 
 // Link ke halaman berikutnya (Next) dan terakhir (Last) 
 if($halaman_aktif < $jmlhalaman){
 	$next = $halaman_aktif+1;
-	$link_halaman .= " <a href=$_SERVER[PHP_SELF]?module=$_GET[module]&halaman=$next&pilih=$_GET[pilih]&kata=$_GET[kata]>Next ></a> | 
-                     <a href=$_SERVER[PHP_SELF]?module=$_GET[module]&halaman=$jmlhalaman&pilih=$_GET[pilih]&kata=$_GET[kata]>Last >></a> ";
+	$link_halaman .= " <a href=".$_SERVER['PHP_SELF']."?module=".$_GET['module']."&halaman=$next&pilih=".$_GET['pilih']."&kata=".$_GET['kata'].">Next ></a> | 
+                     <a href=".$_SERVER['PHP_SELF']."?module=".$_GET['module']."&halaman=$jmlhalaman&pilih=".$_GET['pilih']."&kata=".$_GET['kata'].">Last >></a> ";
 }
 else{
 	$link_halaman .= " Next > | Last >>";
@@ -680,8 +680,8 @@ $link_halaman = "";
 // Link ke halaman pertama (first) dan sebelumnya (prev)
 if($halaman_aktif > 1){
 	$prev = $halaman_aktif-1;
-	$link_halaman .= "<a href=$_SERVER[PHP_SELF]?module=$_GET[module]&act=viewkrs&halaman=1&thak=$_GET[thak]&jur=$_SESSION[jurusan]&smt=$_GET[smt]&thangkatan=$_GET[thangkatan]><< First</a> | 
-                    <a href=$_SERVER[PHP_SELF]?module=$_GET[module]&act=viewkrs&halaman=$prev&thak=$_GET[thak]&jur=$_SESSION[jurusan]&smt=$_GET[smt]&thangkatan=$_GET[thangkatan]>< Prev</a> | ";
+	$link_halaman .= "<a href=".$_SERVER['PHP_SELF']."?module=".$_GET['module']."&act=viewkrs&halaman=1&thak=".$_GET['thak']."&jur=".$_SESSION['jurusan']."&smt=".$_GET['smt']."&thangkatan=".$_GET['thangkatan']."><< First</a> | 
+                    <a href=".$_SERVER['PHP_SELF']."?module=".$_GET['module']."&act=viewkrs&halaman=$prev&thak=".$_GET['thak']."&jur=".$_SESSION['jurusan']."&smt=".$_GET['smt']."&thangkatan=".$_GET['thangkatan'].">< Prev</a> | ";
 }
 else{ 
 	$link_halaman .= "<< First | < Prev | ";
@@ -692,24 +692,24 @@ $angka = ($halaman_aktif > 3 ? " ... " : " ");
 for ($i=$halaman_aktif-2; $i<$halaman_aktif; $i++){
   if ($i < 1)
   	continue;
-	  $angka .= "<a href=$_SERVER[PHP_SELF]?module=$_GET[module]&act=viewkrs&halaman=$i&thak=$_GET[thak]&jur=$_SESSION[jurusan]&smt=$_GET[smt]&thangkatan=$_GET[thangkatan]>$i</a> | ";
+	  $angka .= "<a href=".$_SERVER['PHP_SELF']."?module=".$_GET['module']."&act=viewkrs&halaman=$i&thak=".$_GET['thak']."&jur=".$_SESSION['jurusan']."&smt=".$_GET['smt']."&thangkatan=".$_GET['thangkatan'].">".$i."</a> | ";
   }
 	  $angka .= " <b>$halaman_aktif</b> | ";
 	  
     for($i=$halaman_aktif+1; $i<($halaman_aktif+3); $i++){
     if($i > $jmlhalaman)
       break;
-	  $angka .= "<a href=$_SERVER[PHP_SELF]?module=$_GET[module]&act=viewkrs&halaman=$i&thak=$_GET[thak]&jur=$_SESSION[jurusan]&smt=$_GET[smt]&thangkatan=$_GET[thangkatan]>$i</a> | ";
+	  $angka .= "<a href=".$_SERVER['PHP_SELF']."?module=".$_GET['module']."&act=viewkrs&halaman=$i&thak=".$_GET['thak']."&jur=".$_SESSION['jurusan']."&smt=".$_GET['smt']."&thangkatan=".$_GET['thangkatan'].">".$i."</a> | ";
     }
-	  $angka .= ($halaman_aktif+2<$jmlhalaman ? " ... | <a href=$_SERVER[PHP_SELF]?module=$_GET[module]&act=viewkrs&halaman=$jmlhalaman&thak=$_GET[thak]&jur=$_SESSION[jurusan]&smt=$_GET[smt]&thangkatan=$_GET[thangkatan]>$jmlhalaman</a> | " : " ");
+	  $angka .= ($halaman_aktif+2<$jmlhalaman ? " ... | <a href=".$_SERVER['PHP_SELF']."?module=".$_GET['module']."&act=viewkrs&halaman=$jmlhalaman&thak=".$_GET['thak']."&jur=".$_SESSION['jurusan']."&smt=".$_GET['smt']."&thangkatan=".$_GET['thangkatan'].">$jmlhalaman</a> | " : " ");
 
 $link_halaman .= "$angka";
 
 // Link ke halaman berikutnya (Next) dan terakhir (Last) 
 if($halaman_aktif < $jmlhalaman){
 	$next = $halaman_aktif+1;
-	$link_halaman .= " <a href=$_SERVER[PHP_SELF]?module=$_GET[module]&act=viewkrs&halaman=$next&thak=$_GET[thak]&jur=$_SESSION[jurusan]&smt=$_GET[smt]&thangkatan=$_GET[thangkatan]>Next ></a> | 
-                     <a href=$_SERVER[PHP_SELF]?module=$_GET[module]&act=viewkrs&halaman=$jmlhalaman&thak=$_GET[thak]&jur=$_SESSION[jurusan]&smt=$_GET[smt]&thangkatan=$_GET[thangkatan]>Last >></a> ";
+	$link_halaman .= " <a href=".$_SERVER['PHP_SELF']."?module=".$_GET['module']."&act=viewkrs&halaman=$next&thak=".$_GET['thak']."&jur=".$_SESSION['jurusan']."&smt=".$_GET['smt']."&thangkatan=".$_GET['thangkatan'].">Next ></a> | 
+                     <a href=".$_SERVER['PHP_SELF']."?module=".$_GET['module']."&act=viewkrs&halaman=$jmlhalaman&thak=".$_GET['thak']."&jur=".$_SESSION['jurusan']."&smt=".$_GET['smt']."&thangkatan=".$_GET['thangkatan'].">Last >></a> ";
 }
 else{
 	$link_halaman .= " Next > | Last >>";
@@ -745,8 +745,8 @@ $link_halaman = "";
 // Link ke halaman pertama (first) dan sebelumnya (prev)
 if($halaman_aktif > 1){
 	$prev = $halaman_aktif-1;
-	$link_halaman .= "<a href=$_SERVER[PHP_SELF]?module=$_GET[module]&halaman=1&pilih=$_GET[pilih]&fakultas=$_GET[fakultas]&kata=$_GET[kata]><< First</a> | 
-                    <a href=$_SERVER[PHP_SELF]?module=$_GET[module]&halaman=$prev&pilih=$_GET[pilih]&fakultas=$_GET[fakultas]&kata=$_GET[kata]>< Prev</a> | ";
+	$link_halaman .= "<a href=".$_SERVER['PHP_SELF']."?module=".$_GET['module']."&halaman=1&pilih=".$_GET['pilih']."&fakultas=".$_GET['fakultas']."&kata=".$_GET['kata']."><< First</a> | 
+                    <a href=".$_SERVER['PHP_SELF']."?module=".$_GET['module']."&halaman=$prev&pilih=".$_GET['pilih']."&fakultas=".$_GET['fakultas']."&kata=".$_GET['kata'].">< Prev</a> | ";
 }
 else{ 
 	$link_halaman .= "<< First | < Prev | ";
@@ -757,24 +757,24 @@ $angka = ($halaman_aktif > 3 ? " ... " : " ");
 for ($i=$halaman_aktif-2; $i<$halaman_aktif; $i++){
   if ($i < 1)
   	continue;
-	  $angka .= "<a href=$_SERVER[PHP_SELF]?module=$_GET[module]&halaman=$i&pilih=$_GET[pilih]&fakultas=$_GET[fakultas]&kata=$_GET[kata]>$i</a> | ";
+	  $angka .= "<a href=".$_SERVER['PHP_SELF']."?module=".$_GET['module']."&halaman=$i&pilih=".$_GET['pilih']."&fakultas=".$_GET['fakultas']."&kata=".$_GET['kata'].">".$i."</a> | ";
   }
 	  $angka .= " <b>$halaman_aktif</b> | ";
 	  
     for($i=$halaman_aktif+1; $i<($halaman_aktif+3); $i++){
     if($i > $jmlhalaman)
       break;
-	  $angka .= "<a href=$_SERVER[PHP_SELF]?module=$_GET[module]&halaman=$i&pilih=$_GET[pilih]&fakultas=$_GET[fakultas]&kata=$_GET[kata]>$i</a> | ";
+	  $angka .= "<a href=".$_SERVER['PHP_SELF']."?module=".$_GET['module']."&halaman=$i&pilih=".$_GET['pilih']."&fakultas=".$_GET['fakultas']."&kata=".$_GET['kata'].">".$i."</a> | ";
     }
-	  $angka .= ($halaman_aktif+2<$jmlhalaman ? " ... | <a href=$_SERVER[PHP_SELF]?module=$_GET[module]&halaman=$jmlhalaman&pilih=$_GET[pilih]&fakultas=$_GET[fakultas]&kata=$_GET[kata]>$jmlhalaman</a> | " : " ");
+	  $angka .= ($halaman_aktif+2<$jmlhalaman ? " ... | <a href=".$_SERVER['PHP_SELF']."?module=".$_GET['module']."&halaman=$jmlhalaman&pilih=".$_GET['pilih']."&fakultas=".$_GET['fakultas']."&kata=".$_GET['kata'].">$jmlhalaman</a> | " : " ");
 
 $link_halaman .= "$angka";
 
 // Link ke halaman berikutnya (Next) dan terakhir (Last) 
 if($halaman_aktif < $jmlhalaman){
 	$next = $halaman_aktif+1;
-	$link_halaman .= " <a href=$_SERVER[PHP_SELF]?module=$_GET[module]&halaman=$next&pilih=$_GET[pilih]&fakultas=$_GET[fakultas]&kata=$_GET[kata]>Next ></a> | 
-                     <a href=$_SERVER[PHP_SELF]?module=$_GET[module]&halaman=$jmlhalaman&pilih=$_GET[pilih]&fakultas=$_GET[fakultas]&kata=$_GET[kata]>Last >></a> ";
+	$link_halaman .= " <a href=".$_SERVER['PHP_SELF']."?module=".$_GET['module']."&halaman=$next&pilih=".$_GET['pilih']."&fakultas=".$_GET['fakultas']."&kata=".$_GET['kata'].">Next ></a> | 
+                     <a href=".$_SERVER['PHP_SELF']."?module=".$_GET['module']."&halaman=$jmlhalaman&pilih=".$_GET['pilih']."&fakultas=".$_GET['fakultas']."&kata=".$_GET['kata'].">Last >></a> ";
 }
 else{
 	$link_halaman .= " Next > | Last >>";

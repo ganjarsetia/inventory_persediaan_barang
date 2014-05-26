@@ -14,9 +14,9 @@
 		//Colored table
 		function tabel_ri32_color()
 		{
-			$ruang	= $_POST[ruang];
-			$palok	= $_POST[palok];
-			$jur	= $_POST[jurusan];
+			$ruang	= $_POST['ruang'];
+			$palok	= $_POST['palok'];
+			$jur	= $_POST['jurusan'];
 
 
 			$sql ="SELECT * FROM pmb WHERE ruangujian ='$ruang' AND lokasi = '$palok' AND kelompok = '$jur'";
@@ -31,10 +31,10 @@
 	  			$this->Cell(94,60,'',1,0,'C');
 				$this->Ln(3);
 			
-				if ($data[foto]=='') {
+				if ($data['foto']=='') {
 					$foto = '../../../peserta/foto/nopic.jpg';
 				}else{
-					$foto = '../../../peserta/foto/'.$data[foto];
+					$foto = '../../../peserta/foto/'.$data['foto'];
 				}
 				
 				$this->Cell(30,5,'Nomor Peserta','',0,'L');

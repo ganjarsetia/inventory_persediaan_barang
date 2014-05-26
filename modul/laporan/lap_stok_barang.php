@@ -2,8 +2,8 @@
   include_once('../../inc/inc.koneksi.php');
   include_once('../../inc/fungsi_hdt.php');
   
-	$kode1	= $_GET[kode1];
-  	$kode2	= $_GET[kode2];
+	$kode1	= $_GET['kode1'];
+  	$kode2	= $_GET['kode2'];
   		if(empty($kode1) && empty($kode2)){
 			$query = "SELECT * FROM barang";
 		}else{
@@ -24,8 +24,8 @@
     class PDF extends FPDF{
 	   function FancyTable(){
 		
-		$kode1	= $_GET[kode1];
-  		$kode2	= $_GET[kode2];
+		$kode1	= $_GET['kode1'];
+  		$kode2	= $_GET['kode2'];
   		if(empty($kode1) && empty($kode2)){
 			$query = "SELECT * FROM barang";
 		}else{
@@ -39,7 +39,7 @@
 
 		$no=1;
         while($data=mysql_fetch_array($sql)){
-			$kode		= $data[kode_barang];
+			$kode		= $data['kode_barang'];
 			$stok_awal 	= cari_stok_awal($kode);
 			$jml_beli	= cari_jml_beli($kode);
 			$jml_jual	= cari_jml_jual($kode);

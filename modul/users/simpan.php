@@ -3,11 +3,11 @@ include "../../inc/inc.koneksi.php";
 
 $table		="admins";
 
-$user		=str_replace("'","\'",$_POST[user]);
-$pwd		=md5($_POST[pwd1]);
-$nama		=str_replace("'","\'",$_POST[nama]);
-$level		=$_POST[level];
-$blokir		=$_POST[blokir];
+$user		=str_replace("'","\'",$_POST['user']);
+$pwd		=md5($_POST['pwd1']);
+$nama		=str_replace("'","\'",$_POST['nama']);
+$level		=$_POST['level'];
+$blokir		=$_POST['blokir'];
 
 $sql = mysql_query("SELECT username,password,nama_lengkap,level,blokir
 				   FROM $table 

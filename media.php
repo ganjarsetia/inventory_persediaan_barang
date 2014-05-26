@@ -89,7 +89,7 @@ $(document).ready(function(){
     </div>
     <!--akhir content -->
     <div class="footer" align="center">
-    	<p>Copyright &copy; Help Desk Technology <span class="cls_hdt">HDT</span> 2012</p>
+    	<p>Copyright &copy; <a href="http://ganjarsolutions.com/" target="_blank"><span class="cls_hdt">Ganjar Solutions</span></a> 2012 - <?php echo date("Y"); ?></p>
     </div>
 </div>
 </div>

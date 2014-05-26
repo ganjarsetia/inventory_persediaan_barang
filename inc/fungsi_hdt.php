@@ -8,10 +8,10 @@ function sukses_masuk($username,$pass){
 	  session_start();
 	  include "timeout.php";
 	
-		$_SESSION[namauser]     = $r[username];
-		$_SESSION[namalengkap]  = $r[nama_lengkap];
-		$_SESSION[passuser]     = $r[password];
-		$_SESSION[leveluser]    = $r[level];
+		$_SESSION['namauser']     = $r['username'];
+		$_SESSION['namalengkap']  = $r['nama_lengkap'];
+		$_SESSION['passuser']     = $r['password'];
+		$_SESSION['leveluser']    = $r['level'];
 	
 		// session timeout
 		$_SESSION[login] = 1;
@@ -31,7 +31,7 @@ function msg(){
   echo "<link href='css/screen.css' rel='stylesheet' type='text/css'>
   <link href='css/reset.css' rel='stylesheet' type='text/css'>
   <link href='css/style_button.css' rel='stylesheet' type='text/css'>
-  <center><br><br><br><br><br><br>Maaf, silahkan cek kembali <b>Username</b> dan <b>Password</b> Anda<br><br>Kesalahan $_SESSION[salah]";
+  <center><br><br><br><br><br><br>Maaf, silahkan cek kembali <b>Username</b> dan <b>Password</b> Anda<br><br>Kesalahan ".$_SESSION[salah];
   echo "<div> <a href='index.php'><img src='images/kunci.png'  height=176 width=143></a>
   </div>";
   echo "<input type=button class='button buttonblue mediumbtn' value='KEMBALI' onclick=location.href='index.php'></a></center>";
@@ -63,7 +63,7 @@ function salah_password(){
   echo "<link href='css/screen.css' rel='stylesheet' type='text/css'>
   <link href='css/reset.css' rel='stylesheet' type='text/css'>
   <link href='css/style_button.css' rel='stylesheet' type='text/css'>
-  <center><br><br><br><br><br><br>Maaf, silahkan cek kembali <b>Password</b> Anda<br><br>Kesalahan $_SESSION[salah]";
+  <center><br><br><br><br><br><br>Maaf, silahkan cek kembali <b>Password</b> Anda<br><br>Kesalahan ".$_SESSION[salah];
   echo "<div> <a href='index.php'><img src='images/kunci.png'  height=176 width=143></a>
   </div>";
   echo "<input type=button class='button buttonblue mediumbtn' value='KEMBALI' onclick=location.href='index.php'></a></center>";
@@ -84,7 +84,7 @@ function cari_stok_awal($kode) {
 	$row	= mysql_num_rows($query);
 	if ($row>0){
 		$data	= mysql_fetch_array($query);
-		$hasil	= $data[jml];
+		$hasil	= $data['jml'];
 	}else{
 		$hasil = 0;
 	}
@@ -96,7 +96,7 @@ function cari_jml_beli($kode){
 	$row	= mysql_num_rows($query);
 	if ($row>0){
 		$data	= mysql_fetch_array($query);
-		$hasil	= $data[jml];
+		$hasil	= $data['jml'];
 	}else{
 		$hasil = 0;
 	}
@@ -108,7 +108,7 @@ function cari_jml_jual($kode){
 	$row	= mysql_num_rows($query);
 	if ($row>0){
 		$data	= mysql_fetch_array($query);
-		$hasil	= $data[jml];
+		$hasil	= $data['jml'];
 	}else{
 		$hasil = 0;
 	}

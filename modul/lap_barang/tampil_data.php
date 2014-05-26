@@ -60,13 +60,13 @@ echo "<div id='info'>
 		$no=1+$hal;
 		while($r_data=mysql_fetch_array($query)){
 			echo "<tr>
-					<td align='center'>$no</td>
-					<td align='center'>$r_data[kode_barang]</td>
-					<td>$r_data[nama_barang]</td>
-					<td>$r_data[satuan]</td>
-					<td align='right'>Rp. ".number_format($r_data[harga_beli])."</td>
-					<td align='right'>Rp. ".number_format($r_data[harga_jual])."</td>
-					<td align='center'>$r_data[stok_awal]</td>
+					<td align='center'>".$no."</td>
+					<td align='center'>".$r_data['kode_barang']."</td>
+					<td>".$r_data['nama_barang']."</td>
+					<td>".$r_data['satuan']."</td>
+					<td align='right'>Rp. ".number_format($r_data['harga_beli'])."</td>
+					<td align='right'>Rp. ".number_format($r_data['harga_jual'])."</td>
+					<td align='center'>".$r_data['stok_awal']."</td>
 					</tr>";
 			$no++;
 		}

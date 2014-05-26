@@ -137,17 +137,17 @@ echo "<table id='theList' width='100%'>
 		while($r_data=mysql_fetch_array($query)){
 			echo "<tr>
 					<td align='center'>$no</td>
-					<td>$r_data[username]</td>
-					<td>$r_data[nama_lengkap]</td>
-					<td>$r_data[level]</td>
-					<td align='center' width='2%'>$r_data[blokir]</td>
-					<td align='center'>$r_data[lastlogin]</td>
-					<td align='center'>$r_data[ipaddress]</td>
+					<td>".$r_data['username']."</td>
+					<td>".$r_data['nama_lengkap']."</td>
+					<td>".$r_data['level']."</td>
+					<td align='center' width='2%'>".$r_data['blokir']."</td>
+					<td align='center'>".$r_data['lastlogin']."</td>
+					<td align='center'>".$r_data['ipaddress']."</td>
 					<td align='center'>
-					<a href='javascript:void(0)' onClick=\"edit_data('$r_data[username]')\">
+					<a href='javascript:void(0)' onClick=\"edit_data('".$r_data['username']."')\">
 					<img src='icon/thumb_up.png' border='0' id='edit' title='Edit' width='12' height='12' >
 					</a>
-					<a href='javascript:void(0)' onClick=\"hapus_data('$r_data[username]')\">
+					<a href='javascript:void(0)' onClick=\"hapus_data('".$r_data['username']."')\">
 					<img src='icon/thumb_down.png' border='0' id='hapus' title='Hapus' width='12' height='12' >
 					</a>					
 					</td>
@@ -172,7 +172,7 @@ echo "<table id='theList' width='100%'>
 				for ($h = 1; $h <= $max; $h++) {
 					$list[$h] = $lim * $h - $lim;
 					echo " <a href='javascript:void(0)' ";?> 
-                    onClick="$.get('modul/users/tampil_data.php?blokir=<?php echo $_GET[blokir];?>&hal=<?php echo $list[$h]; ?>', 
+                    onClick="$.get('modul/users/tampil_data.php?blokir=<?php echo $_GET['blokir'];?>&hal=<?php echo $list[$h]; ?>', 
                     null, function(data) {$('#tampil_data').html(data);})" <?php echo">".$h."</a> ";
 				}
 			}
@@ -188,7 +188,7 @@ echo "<table id='theList' width='100%'>
 				for ($h = 1; $h <= $max; $h++) {
 					$list[$h] = $lim * $h - $lim;
 					echo " <a href='javascript:void(0)' ";?> 
-                    onClick="$.get('modul/users/tampil_data.php?level=<?php echo $_GET[level];?>&hal=<?php echo $list[$h]; ?>', 
+                    onClick="$.get('modul/users/tampil_data.php?level=<?php echo $_GET['level'];?>&hal=<?php echo $list[$h]; ?>', 
                     null, function(data) {$('#tampil_data').html(data);})" <?php echo">".$h."</a> ";
 				}
 			}		
@@ -196,7 +196,7 @@ echo "<table id='theList' width='100%'>
 				for ($h = 1; $h <= $max; $h++) {
 					$list[$h] = $lim * $h - $lim;
 					echo " <a href='javascript:void(0)' ";?> 
-                    onClick="$.get('modul/users/tampil_data.php?cari=<?php echo $_GET[cari];?>&hal=<?php echo $list[$h]; ?>', 
+                    onClick="$.get('modul/users/tampil_data.php?cari=<?php echo $_GET['cari'];?>&hal=<?php echo $list[$h]; ?>', 
                     null, function(data) {$('#tampil_data').html(data);})" <?php echo">".$h."</a> ";
 				}
 		}

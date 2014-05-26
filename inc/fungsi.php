@@ -137,7 +137,7 @@ function kasbon($bulan,$tahun,$nik){
 	$row	= mysql_num_rows($data);
 	$r_data	= mysql_fetch_array($data);
 	if ($row>0){
-		$hasil	= $r_data[total];
+		$hasil	= $r_data['total'];
 	}else{
 		$hasil	= 0;
 	}

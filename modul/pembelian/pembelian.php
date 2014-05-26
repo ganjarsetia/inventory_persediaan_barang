@@ -63,7 +63,7 @@ echo "<table id='theList' width='100%'>
 		$sql	= "SELECT * FROM supplier ";
 		$query	= mysql_query($sql);
 		while($r=mysql_fetch_array($query)){
-			echo "<option value='$r[kode_supplier]'>$r[kode_supplier] - $r[nama_supplier]</option>";
+			echo "<option value='".$r['kode_supplier']."'>".$r['kode_supplier']." - ".$r['nama_supplier']."</option>";
 		}
 		echo "</select>
 		</td>

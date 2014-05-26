@@ -41,12 +41,12 @@ echo "<table id='theList' width='100%'>
 		
 		$no=1+$hal;
 		while($r_data=mysql_fetch_array($query)){
-			$kode_barang = $r_data[kode_barang];
+			$kode_barang = $r_data['kode_barang'];
 			echo "<tr>
-					<td align='center'>$no</td>
-					<td>$r_data[kode_barang]</td>
-					<td>$r_data[nama_barang]</td>
-					<td>$r_data[satuan]</td>
+					<td align='center'>".$no."</td>
+					<td>".$r_data['kode_barang']."</td>
+					<td>".$r_data['nama_barang']."</td>
+					<td>".$r_data['satuan']."</td>
 					<td align='center'>
 					<a href='javascript:editRow(\"{$kode_barang}\")' >
 		<img src='icon/thumb_up.png' border='0' id='edit' title='Edit' width='12' height='12' >
@@ -59,7 +59,7 @@ echo "<table id='theList' width='100%'>
 	echo "</table>";
 	echo "<table width='100%'>
 		<tr>
-			<td>Jumlah Data : $jml</td>
+			<td>Jumlah Data : ".$jml."</td>
 			<td align='right'>Halaman :";
 			for ($h = 1; $h <= $max; $h++) {
 					$list[$h] = $lim * $h - $lim;

@@ -55,10 +55,10 @@ $mod	= 'pendaftar';
 $table	= 'pmb';
 
 $sql_prop = mysql_fetch_array(mysql_query("SELECT * FROM propinsi WHERE propinsi_id='$prop'"));
-$r_prop = $sql_prop[propinsi];
+$r_prop = $sql_prop['propinsi'];
 
 $sql_kota = mysql_fetch_array(mysql_query("SELECT * FROM kota_kabupaten WHERE propinsi_id='$prop' AND kota_id='$kota'"));
-$r_kota = $sql_kota[kota_kabupaten];
+$r_kota = $sql_kota['kota_kabupaten'];
 
 ?>
 <div align="center">LAPORAN PENDAFTAR PER WILAYAH</div>
@@ -96,24 +96,24 @@ $sql ="SELECT nodaftar,noujian,nama,tempatlhr,tgllhr,jk,provinsi,kota,thijazah,p
 $data=mysql_query($sql);
 $i = $posisi+1;
 while($r = mysql_fetch_array($data)){
-$tgl	= jin_date_str($r[tgllhr]);
+$tgl	= jin_date_str($r['tgllhr']);
 
-$cari_jur	= mysql_fetch_array(mysql_query("SELECT id_prodi,program_studi FROM kodeprodi WHERE id_prodi='$r[pilihjurusan1]'"));
+$cari_jur	= mysql_fetch_array(mysql_query("SELECT id_prodi,program_studi FROM kodeprodi WHERE id_prodi='".$r['pilihjurusan1']."'"));
 $jur	= $cari_jur['program_studi'];
 
-$cari_jur2	= mysql_fetch_array(mysql_query("SELECT id_prodi,program_studi FROM kodeprodi WHERE id_prodi='$r[pilihjurusan2]'"));
+$cari_jur2	= mysql_fetch_array(mysql_query("SELECT id_prodi,program_studi FROM kodeprodi WHERE id_prodi='".$r['pilihjurusan2']."'"));
 $jur2	= $cari_jur2['program_studi'];
 
 ?>
 <tr>
     <td align=center><?php echo $i; ?></td>
-    <td align=center><?php echo $r[noujian]; ?></td>
-    <td align=center><?php echo $r[ruangujian]; ?></td>
-    <td width="180" ><?php echo $r[nama]; ?></td>
-    <td><?php echo $r[tempatlhr].','.$tgl; ?></td>
-    <td align=center><?php echo $r[jk]; ?></td>    
-    <td ><?php echo $r[kelompok].'-'. $jur; ?></td>
-    <td ><?php echo $r[kelompok].'-'. $jur2; ?></td>    
+    <td align=center><?php echo $r['noujian']; ?></td>
+    <td align=center><?php echo $r['ruangujian']; ?></td>
+    <td width="180" ><?php echo $r['nama']; ?></td>
+    <td><?php echo $r['tempatlhr'].','.$tgl; ?></td>
+    <td align=center><?php echo $r['jk']; ?></td>    
+    <td ><?php echo $r['kelompok'].'-'. $jur; ?></td>
+    <td ><?php echo $r['kelompok'].'-'. $jur2; ?></td>    
 </tr>
 <?php
 $i++;

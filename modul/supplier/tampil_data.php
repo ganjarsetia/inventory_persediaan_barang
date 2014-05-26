@@ -83,17 +83,17 @@ echo "<table id='theList' width='100%'>
 		
 		$no=1+$hal;
 		while($r_data=mysql_fetch_array($query)){
-			$kode_barang = $r_data[kode_barang];
+			$kode_barang = $r_data['kode_barang'];
 			echo "<tr>
 					<td align='center'>$no</td>
-					<td>$r_data[kode_supplier]</td>
-					<td>$r_data[nama_supplier]</td>
-					<td>$r_data[alamat]</td>
+					<td>".$r_data['kode_supplier']."</td>
+					<td>".$r_data['nama_supplier']."</td>
+					<td>".$r_data['alamat']."</td>
 					<td align='center'>
-					<a href='javascript:void(0)' onClick=\"edit_data('$r_data[kode_supplier]')\">
+					<a href='javascript:void(0)' onClick=\"edit_data('".$r_data['kode_supplier']."')\">
 					<img src='icon/thumb_up.png' border='0' id='edit' title='Edit' width='12' height='12' >
 					</a>
-					<a href='javascript:void(0)' onClick=\"hapus_data('$r_data[kode_supplier]')\">
+					<a href='javascript:void(0)' onClick=\"hapus_data('".$r_data['kode_supplier']."')\">
 					<img src='icon/thumb_down.png' border='0' id='hapus' title='Hapus' width='12' height='12' >
 					</a>					
 					</td>
@@ -109,7 +109,7 @@ echo "<table id='theList' width='100%'>
 			for ($h = 1; $h <= $max; $h++) {
 					$list[$h] = $lim * $h - $lim;
 					echo " <a href='javascript:void(0)' ";?> 
-                    onClick="$.get('modul/supplier/tampil_data.php?cari=<?php echo $_GET[cari];?>&hal=<?php echo $list[$h]; ?>', 
+                    onClick="$.get('modul/supplier/tampil_data.php?cari=<?php echo $_GET['cari'];?>&hal=<?php echo $list[$h]; ?>', 
                     null, function(data) {$('#tampil_data').html(data);})" <?php echo">".$h."</a> ";
 				}
 	echo "</td>

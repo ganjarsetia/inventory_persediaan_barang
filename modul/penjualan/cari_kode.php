@@ -10,7 +10,7 @@ $row	= mysql_num_rows($sql);
 if ($row>0){
 while ($r=mysql_fetch_array($sql)){	
 	
-	$data['tgl']	= jin_date_str($r[tgl_jual]);
+	$data['tgl']	= jin_date_str($r['tgl_jual']);
 	echo json_encode($data);
 }
 }else{

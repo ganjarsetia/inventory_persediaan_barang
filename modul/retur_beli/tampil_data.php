@@ -96,7 +96,7 @@ $(document).ready(function() {
 
 <?php
 include '../../inc/inc.koneksi.php';
-$kode	= $_POST[kode];
+$kode	= $_POST['kode'];
 
 echo "<table id='theList' class='retur' width='100%'>
 		<tr>
@@ -121,17 +121,17 @@ echo "<table id='theList' class='retur' width='100%'>
 		
 		$no=1;
 		while($r_data=mysql_fetch_array($query)){
-			$total	= $r_data[jumlah_beli]*$r_data[harga_beli];
+			$total	= $r_data['jumlah_beli']*$r_data['harga_beli'];
 			echo "<tr>
 					<td align='center'>$no</td>
-					<td align='center'><input type='checkbox' value='$r_data[kode_barang]' class='cek' id='cek$no'>
-					<input type='hidden' name='kode_brg$no'  id='kode_brg$no' value='$r_data[kode_barang]' >
+					<td align='center'><input type='checkbox' value='".$r_data['kode_barang']."' class='cek' id='cek$no'>
+					<input type='hidden' name='kode_brg$no'  id='kode_brg$no' value='".$r_data['kode_barang']."' >
 					</td>
-					<td>$r_data[kode_barang]</td>
-					<td>$r_data[nama_barang]</td>
-					<td align='center'>$r_data[satuan]</td>
-					<td align='center'>$r_data[jumlah_beli]</td>
-					<td align='center'><input type='text' class='jml_retur' id='jml_retur$no' size='3' ></td>
+					<td>".$r_data['kode_barang']."</td>
+					<td>".$r_data['nama_barang']."</td>
+					<td align='center'>".$r_data['satuan']."</td>
+					<td align='center'>".$r_data['jumlah_beli']."</td>
+					<td align='center'><input type='text' class='jml_retur' id='jml_retur".$no."' size='3' ></td>
 					</tr>";
 			$no++;
 			$g_total = $g_total+$total;

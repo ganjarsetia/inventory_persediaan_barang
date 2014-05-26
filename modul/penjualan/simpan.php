@@ -6,12 +6,12 @@ include "../../inc/fungsi_hdt.php";
 
 $table		="penjualan";
 
-$kode		=$_POST[kode];
-$tgl		=jin_date_sql($_POST[tgl]);
-$kode_brg	=$_POST[kode_brg];
-$jumlah		=$_POST[jumlah];
-$harga		=$_POST[harga];
-$user		=$_SESSION[namauser];
+$kode		=$_POST['kode'];
+$tgl		=jin_date_sql($_POST['tgl']);
+$kode_brg	=$_POST['kode_brg'];
+$jumlah		=$_POST['jumlah'];
+$harga		=$_POST['harga'];
+$user		=$_SESSION['namauser'];
 
 //Cari stok barang
 $stok_barang	= cari_stok_akhir($kode_brg);

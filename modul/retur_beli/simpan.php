@@ -4,11 +4,11 @@ include "../../inc/fungsi_tanggal.php";
 
 $table		="retur_pembelian";
 
-$kode_retur	=$_POST[kode_retur];
-$kode		=$_POST[kode];
-$tgl		=jin_date_sql($_POST[tgl]);
-$jml		=$_POST[jml];
-$kode_brg	=$_POST[kode_brg];
+$kode_retur	=$_POST['kode_retur'];
+$kode		=$_POST['kode'];
+$tgl		=jin_date_sql($_POST['tgl']);
+$jml		=$_POST['jml'];
+$kode_brg	=$_POST['kode_brg'];
 
 $query ="SELECT kode_retur,tgl_retur,kode_beli,kode_barang,jumlah_retur
 				   FROM $table 
